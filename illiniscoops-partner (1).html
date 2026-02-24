@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IlliniScoops Partners — Built for Campus. Built to Scale.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,700;1,900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #03444A;
+  --teal-mid: #055A63;
+  --teal-light: #0A7A87;
+  --orange: #E66414;
+  --orange-light: #F08040;
+  --cream: #F7F3EE;
+  --white: #FFFFFF;
+  --dark: #01282C;
+  --text: #1A3335;
+  --muted: #5C8285;
+  --border: rgba(3,68,74,0.12);
+  --border-light: rgba(255,255,255,0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* All Playfair Display usage is italic by default */
+[style*="Playfair"],
+.nav-logo, .hero-title, .section-title, .exp-title,
+.phase-title, .pc-col-title, .fin-card-title,
+.pc-title, .metric-num, .hsc-value, .cost-val,
+.rs-result-val, .footer-brand, .closing-quote,
+.ep-val {
+  font-style: italic;
+}
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--dark);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 4rem;
+  background: rgba(1,40,44,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-light);
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 1.3rem; font-weight: 900;
+  letter-spacing: -0.01em;
+}
+.nav-logo .illini { color: #4DB8C2; }
+.nav-logo .scoops { color: var(--orange); }
+.nav-tag {
+  background: rgba(230,100,20,0.15);
+  border: 1px solid rgba(230,100,20,0.3);
+  color: var(--orange-light);
+  font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.25rem 0.7rem; border-radius: 50px;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  text-decoration: none; color: rgba(255,255,255,0.55);
+  font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: white; }
+.nav-cta {
+  background: var(--orange); color: white;
+  border: none; padding: 0.6rem 1.4rem;
+  border-radius: 6px; font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem; font-weight: 600; cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-cta:hover { background: var(--orange-light); transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--dark);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 8rem 4rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(3,68,74,0.5) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(230,100,20,0.08) 0%, transparent 60%);
+}
+.hero-grid {
+  position: absolute; inset: 0; opacity: 0.04;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-content { position: relative; max-width: 800px; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: rgba(230,100,20,0.1);
+  border: 1px solid rgba(230,100,20,0.25);
+  color: var(--orange-light);
+  padding: 0.45rem 1rem; border-radius: 50px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 2rem;
+  animation: fadeUp 0.6s ease both;
+}
+.hero-eyebrow::before {
+  content: ''; width: 6px; height: 6px;
+  background: var(--orange); border-radius: 50%;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  font-weight: 900; line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.7s ease 0.1s both;
+}
+.hero-title .accent { color: var(--orange); font-style: italic; }
+.hero-title .teal-accent { color: #4DB8C2; }
+.hero-sub {
+  font-size: 1.15rem; color: rgba(255,255,255,0.55);
+  line-height: 1.8; max-width: 560px;
+  margin-bottom: 3rem;
+  animation: fadeUp 0.7s ease 0.2s both;
+}
+.hero-actions {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  animation: fadeUp 0.7s ease 0.3s both;
+}
+.btn-primary {
+  background: var(--orange); color: white;
+  border: none; padding: 0.9rem 2rem;
+  border-radius: 6px; font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem; font-weight: 600; cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(230,100,20,0.35); }
+.btn-outline {
+  background: transparent; color: white;
+  border: 1.5px solid rgba(255,255,255,0.25); padding: 0.9rem 2rem;
+  border-radius: 6px; font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem; font-weight: 500; cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-outline:hover { border-color: white; background: rgba(255,255,255,0.05); }
+.btn-ghost {
+  background: rgba(3,68,74,0.4); color: #4DB8C2;
+  border: 1.5px solid rgba(77,184,194,0.3); padding: 0.9rem 2rem;
+  border-radius: 6px; font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem; font-weight: 500; cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { background: rgba(3,68,74,0.7); border-color: #4DB8C2; }
+
+.hero-stats {
+  position: absolute; right: 4rem; top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: 1.2rem;
+  animation: fadeUp 0.8s ease 0.4s both;
+}
+.hero-stat-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 1.5rem 2rem;
+  min-width: 220px; backdrop-filter: blur(10px);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.hero-stat-card:hover { border-color: rgba(230,100,20,0.3); transform: translateX(-4px); }
+.hsc-label { font-size: 0.72rem; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.hsc-value { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2rem; font-weight: 900; color: white; line-height: 1; }
+.hsc-sub { font-size: 0.8rem; color: rgba(255,255,255,0.35); margin-top: 0.3rem; }
+.hsc-value.orange { color: var(--orange); }
+.hsc-value.teal { color: #4DB8C2; }
+
+/* ── DIVIDER BAND ── */
+.band {
+  background: var(--teal);
+  padding: 1.4rem 4rem;
+  display: flex; gap: 3rem; align-items: center;
+  overflow: hidden;
+}
+.band-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 500;
+  white-space: nowrap; flex-shrink: 0;
+}
+.band-item::before {
+  content: ''; display: block;
+  width: 6px; height: 6px; background: var(--orange); border-radius: 50%;
+}
+
+/* ── SECTION COMMONS ── */
+.section { padding: 7rem 4rem; max-width: 1300px; margin: 0 auto; }
+.section-tag {
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--orange); font-weight: 600; margin-bottom: 0.8rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 900; line-height: 1.1;
+  letter-spacing: -0.02em; color: white;
+  margin-bottom: 1.2rem;
+}
+.section-title .italic { font-style: italic; color: #4DB8C2; }
+.section-title .accent { color: var(--orange); font-style: italic; }
+.section-body {
+  color: rgba(255,255,255,0.5); font-size: 1rem;
+  line-height: 1.8; max-width: 560px;
+}
+
+/* ── BUSINESS MODEL ── */
+.model-section { background: #021C1F; padding: 7rem 0; }
+.model-inner { max-width: 1300px; margin: 0 auto; padding: 0 4rem; }
+.model-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start; margin-top: 4rem;
+}
+.model-left .section-body { max-width: none; margin-bottom: 2.5rem; }
+.revenue-cards { display: flex; flex-direction: column; gap: 1rem; }
+.revenue-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px; padding: 1.2rem 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.revenue-card:hover { border-color: rgba(230,100,20,0.3); background: rgba(230,100,20,0.05); }
+.rc-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(230,100,20,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.rc-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; text-transform: uppercase; }
+.rc-value { font-size: 0.95rem; font-weight: 600; color: white; margin-top: 0.1rem; }
+
+.model-right { }
+.metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.metric-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px; padding: 1.8rem;
+  transition: border-color 0.25s;
+}
+.metric-box:hover { border-color: rgba(77,184,194,0.3); }
+.metric-num {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 2.4rem; font-weight: 900;
+  line-height: 1; margin-bottom: 0.4rem;
+}
+.metric-num.o { color: var(--orange); }
+.metric-num.t { color: #4DB8C2; }
+.metric-num.w { color: white; }
+.metric-label { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.4; }
+.metric-box.wide { grid-column: span 2; display: flex; align-items: center; gap: 2rem; }
+.metric-box.wide .metric-num { font-size: 3rem; }
+
+/* ── PROS & CONS ── */
+.proscons-section { background: var(--dark); padding: 7rem 0; }
+.proscons-inner { max-width: 1300px; margin: 0 auto; padding: 0 4rem; }
+.proscons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; }
+.pc-col {}
+.pc-col-header {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+.pc-badge {
+  padding: 0.35rem 1rem; border-radius: 50px;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.pc-badge.green { background: rgba(34,197,94,0.12); color: #4ADE80; border: 1px solid rgba(34,197,94,0.2); }
+.pc-badge.red { background: rgba(239,68,68,0.1); color: #FCA5A5; border: 1px solid rgba(239,68,68,0.2); }
+.pc-col-title { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; font-weight: 700; }
+.pc-items { display: flex; flex-direction: column; gap: 1rem; }
+.pc-item {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px; padding: 1.2rem 1.5rem;
+  display: flex; gap: 1rem; align-items: flex-start;
+  transition: border-color 0.2s;
+}
+.pc-item:hover { border-color: rgba(255,255,255,0.14); }
+.pc-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  flex-shrink: 0; margin-top: 6px;
+}
+.pc-dot.green { background: #4ADE80; box-shadow: 0 0 8px rgba(74,222,128,0.4); }
+.pc-dot.red { background: #FCA5A5; box-shadow: 0 0 8px rgba(252,165,165,0.4); }
+.pc-item-title { font-size: 0.9rem; font-weight: 600; color: white; margin-bottom: 0.2rem; }
+.pc-item-desc { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
+
+/* ── LAUNCH ROADMAP ── */
+.roadmap-section { background: #021C1F; padding: 7rem 0; }
+.roadmap-inner { max-width: 1300px; margin: 0 auto; padding: 0 4rem; }
+.phases { display: flex; flex-direction: column; gap: 0; margin-top: 4rem; position: relative; }
+.phases::before {
+  content: ''; position: absolute;
+  left: 28px; top: 0; bottom: 0; width: 2px;
+  background: linear-gradient(to bottom, var(--orange), #4DB8C2, transparent);
+}
+.phase {
+  display: flex; gap: 2.5rem;
+  padding: 2rem 0 2rem 0;
+  position: relative;
+}
+.phase-num {
+  width: 58px; height: 58px;
+  background: var(--dark); border: 2px solid var(--orange);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; font-weight: 900;
+  color: var(--orange); flex-shrink: 0; position: relative; z-index: 1;
+  transition: all 0.2s;
+}
+.phase:hover .phase-num {
+  background: var(--orange); color: white;
+  box-shadow: 0 0 20px rgba(230,100,20,0.4);
+}
+.phase-content {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px; padding: 1.8rem 2rem;
+  flex: 1; transition: border-color 0.2s;
+}
+.phase:hover .phase-content { border-color: rgba(230,100,20,0.2); }
+.phase-tag { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); font-weight: 600; margin-bottom: 0.5rem; }
+.phase-title { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; }
+.phase-items { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.phase-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px; padding: 0.3rem 0.8rem;
+  font-size: 0.8rem; color: rgba(255,255,255,0.6);
+}
+
+/* ── FINANCIALS ── */
+.financials-section { background: var(--dark); padding: 7rem 0; }
+.financials-inner { max-width: 1300px; margin: 0 auto; padding: 0 4rem; }
+.fin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; }
+.fin-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px; padding: 2.5rem;
+}
+.fin-card.highlight {
+  background: linear-gradient(135deg, rgba(3,68,74,0.5), rgba(1,28,31,0.8));
+  border-color: rgba(77,184,194,0.3);
+}
+.fin-card-title { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; font-weight: 700; margin-bottom: 1.8rem; display: flex; align-items: center; gap: 0.75rem; }
+.fin-card-title .icon { font-size: 1.3rem; }
+.cost-line {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.cost-line:last-child { border-bottom: none; }
+.cost-label { font-size: 0.88rem; color: rgba(255,255,255,0.55); }
+.cost-val { font-size: 0.9rem; font-weight: 600; color: white; }
+.cost-total {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 0 0;
+  margin-top: 0.5rem;
+  border-top: 2px solid rgba(255,255,255,0.1);
+}
+.cost-total .cost-label { color: white; font-weight: 600; font-size: 0.95rem; }
+.cost-total .cost-val { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; color: #4DB8C2; }
+
+.revenue-scenario {
+  background: rgba(230,100,20,0.08);
+  border: 1px solid rgba(230,100,20,0.2);
+  border-radius: 12px; padding: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.rs-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); font-weight: 600; margin-bottom: 1rem; }
+.rs-row { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+.rs-key { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+.rs-val { font-size: 0.85rem; font-weight: 600; color: white; }
+.rs-result {
+  margin-top: 1rem; padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.rs-result-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+.rs-result-val { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; font-weight: 900; color: var(--orange); }
+
+/* ── PARTNERSHIP ── */
+.partner-section { background: #021C1F; padding: 7rem 0; }
+.partner-inner { max-width: 1300px; margin: 0 auto; padding: 0 4rem; }
+.partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+.partner-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px; padding: 2.2rem;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.partner-card:hover { border-color: rgba(230,100,20,0.3); transform: translateY(-4px); }
+.pc-head { font-size: 2rem; margin-bottom: 1rem; }
+.pc-title { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+.pc-desc { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.6; margin-bottom: 1.5rem; }
+.pc-perks { display: flex; flex-direction: column; gap: 0.5rem; }
+.pc-perk {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.82rem; color: rgba(255,255,255,0.6);
+}
+.pc-perk::before { content: '→'; color: var(--orange); font-weight: 700; font-size: 0.9rem; }
+
+/* ── EXPANSION ── */
+.expansion-section {
+  background: var(--dark);
+  padding: 7rem 4rem;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.expansion-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(3,68,74,0.35) 0%, transparent 65%);
+}
+.exp-content { position: relative; max-width: 700px; margin: 0 auto; }
+.exp-title {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 900; line-height: 1.05;
+  letter-spacing: -0.03em; margin-bottom: 1.5rem;
+}
+.exp-title .italic { font-style: italic; color: #4DB8C2; }
+.exp-title .accent { color: var(--orange); font-style: italic; }
+.exp-body { color: rgba(255,255,255,0.45); font-size: 1rem; line-height: 1.8; margin-bottom: 3rem; }
+.exp-pillars { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+.exp-pillar {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 1rem 1.5rem;
+  text-align: left; min-width: 160px;
+}
+.ep-label { font-size: 0.7rem; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; }
+.ep-val { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; font-weight: 700; color: white; margin-top: 0.3rem; }
+
+/* ── CONTACT ── */
+.contact-section { background: var(--teal); padding: 7rem 4rem; }
+.contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.contact-left .section-title { color: white; }
+.contact-left .section-body { color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; }
+.closing-quote {
+  background: rgba(255,255,255,0.06);
+  border-left: 3px solid var(--orange);
+  padding: 1.5rem 1.8rem;
+  border-radius: 0 12px 12px 0;
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-style: italic; font-size: 1.05rem;
+  color: rgba(255,255,255,0.8); line-height: 1.6;
+}
+.contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.form-label { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 600; }
+.form-input, .form-select, .form-textarea {
+  background: rgba(255,255,255,0.07);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  color: white; padding: 0.85rem 1.1rem;
+  border-radius: 8px; font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem; outline: none; transition: border-color 0.2s;
+  width: 100%;
+}
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.25); }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--orange); }
+.form-select option { background: var(--teal); }
+.form-textarea { resize: vertical; min-height: 100px; }
+.form-submit {
+  background: var(--orange); color: white;
+  border: none; padding: 1rem 2rem;
+  border-radius: 8px; font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem; font-weight: 600; cursor: pointer;
+  transition: all 0.2s; align-self: flex-start;
+}
+.form-submit:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(230,100,20,0.4); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 2.5rem 4rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 1.1rem; font-weight: 900;
+}
+.footer-brand .illini { color: #4DB8C2; }
+.footer-brand .scoops { color: var(--orange); }
+.footer-meta { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a { color: rgba(255,255,255,0.3); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .hero-stats { position: static; transform: none; flex-direction: row; flex-wrap: wrap; margin-top: 3rem; }
+  .hero-stat-card { min-width: 160px; flex: 1; }
+}
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { padding: 7rem 1.5rem 4rem; }
+  .section { padding: 5rem 1.5rem; }
+  .model-inner, .proscons-inner, .roadmap-inner, .financials-inner, .partner-inner { padding: 0 1.5rem; }
+  .model-section, .proscons-section, .roadmap-section, .financials-section, .partner-section { padding: 5rem 0; }
+  .model-grid, .proscons-grid, .fin-grid { grid-template-columns: 1fr; }
+  .partner-grid { grid-template-columns: 1fr; }
+  .contact-section { padding: 5rem 1.5rem; }
+  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .form-row { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
+  .expansion-section { padding: 5rem 1.5rem; }
+  .band { padding: 1.2rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-logo"><span class="illini">Illini</span><span class="scoops">Scoops</span></div>
+    <div class="nav-tag">Partner Portal</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#model">Business Model</a></li>
+    <li><a href="#roadmap">Launch Plan</a></li>
+    <li><a href="#financials">Financials</a></li>
+    <li><a href="#partners">Partnerships</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Become a Partner</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Partner & Investor Portal — UIUC Campus</div>
+    <h1 class="hero-title">
+      Built for<br>
+      <span class="teal-accent">Campus.</span><br>
+      Built to <span class="accent">Scale.</span>
+    </h1>
+    <p class="hero-sub">A student-powered dessert micro-brand with low overhead, subscription-driven demand forecasting, and a concentrated market of 45,000+ students on one of America's most walkable campuses.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Become a Partner</button>
+      <button class="btn-outline" onclick="document.getElementById('model').scrollIntoView({behavior:'smooth'})">View Operations Model</button>
+      <button class="btn-ghost" onclick="document.getElementById('financials').scrollIntoView({behavior:'smooth'})">Download Prospectus</button>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat-card">
+      <div class="hsc-label">Startup Range</div>
+      <div class="hsc-value orange">$12K</div>
+      <div class="hsc-sub">Estimated total launch cost</div>
+    </div>
+    <div class="hero-stat-card">
+      <div class="hsc-label">Weekly Revenue Potential</div>
+      <div class="hsc-value teal">$2,700</div>
+      <div class="hsc-sub">3 days × 150 customers × $6</div>
+    </div>
+    <div class="hero-stat-card">
+      <div class="hsc-label">Campus Market</div>
+      <div class="hsc-value w">45K+</div>
+      <div class="hsc-sub">Students at UIUC</div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<div class="band">
+  <div class="band-item">Student-Founded</div>
+  <div class="band-item">Low Overhead Model</div>
+  <div class="band-item">Subscription-Driven Demand</div>
+  <div class="band-item">Mobile & Flexible Operations</div>
+  <div class="band-item">Scalable to Multiple Campuses</div>
+  <div class="band-item">6 Curated Flavors</div>
+  <div class="band-item">UIUC Campus Exclusive</div>
+  <div class="band-item">Limited Supply = High Demand</div>
+  <div class="band-item">Student-Founded</div>
+  <div class="band-item">Low Overhead Model</div>
+</div>
+
+<!-- BUSINESS MODEL -->
+<div class="model-section" id="model">
+  <div class="model-inner">
+    <div class="section-tag">Business Model</div>
+    <h2 class="section-title">How <span class="italic">IlliniScoops</span> Works</h2>
+    <div class="model-grid">
+      <div class="model-left">
+        <p class="section-body">IlliniScoops operates as a mobile ice cream cart with intentionally limited inventory and activation days. Scarcity drives subscription sign-ups. Subscriptions drive predictable demand. Predictable demand minimizes waste and maximizes per-activation revenue.</p>
+        <p class="section-body" style="margin-top:1rem;">The core loop: limited flavors → fewer decisions → faster transactions → higher throughput → better margins.</p>
+        <div style="margin-top:2.5rem;">
+          <div class="section-tag" style="margin-bottom:1.2rem;">Revenue Streams</div>
+          <div class="revenue-cards">
+            <div class="revenue-card">
+              <div class="rc-icon">🍦</div>
+              <div><div class="rc-label">Primary</div><div class="rc-value">Direct Ice Cream Sales</div></div>
+            </div>
+            <div class="revenue-card">
+              <div class="rc-icon">🔔</div>
+              <div><div class="rc-label">Recurring</div><div class="rc-value">Subscription Memberships</div></div>
+            </div>
+            <div class="revenue-card">
+              <div class="rc-icon">🎓</div>
+              <div><div class="rc-label">Seasonal</div><div class="rc-value">Campus Event Partnerships</div></div>
+            </div>
+            <div class="revenue-card">
+              <div class="rc-icon">🤝</div>
+              <div><div class="rc-label">Brand</div><div class="rc-value">Sponsorships & Co-branding</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="model-right">
+        <div class="section-tag" style="margin-bottom:1.2rem;">Key Metrics & Advantages</div>
+        <div class="metrics-grid">
+          <div class="metric-box">
+            <div class="metric-num o">2–3</div>
+            <div class="metric-label">Operators needed per activation day</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-num t">6</div>
+            <div class="metric-label">Flavors — minimizes inventory complexity</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-num w">$0</div>
+            <div class="metric-label">Long-term lease obligations</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-num t">∞</div>
+            <div class="metric-label">Campus location flexibility</div>
+          </div>
+          <div class="metric-box wide">
+            <div>
+              <div class="metric-num o">45K+</div>
+            </div>
+            <div>
+              <div class="metric-label" style="font-size:0.95rem; color:rgba(255,255,255,0.6);">Captive student audience on a single, highly walkable campus — every customer is within 10 minutes of wherever the cart activates.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROS & CONS -->
+<div class="proscons-section">
+  <div class="proscons-inner">
+    <div class="section-tag">Honest Assessment</div>
+    <h2 class="section-title">Advantages & <span class="accent">Risks</span></h2>
+    <p class="section-body" style="margin-top:0.5rem;">We believe serious partners deserve full transparency. Here is an honest picture of both the opportunity and the challenges.</p>
+    <div class="proscons-grid">
+      <div class="pc-col">
+        <div class="pc-col-header">
+          <div class="pc-badge green">Advantages</div>
+          <div class="pc-col-title">Why It Works</div>
+        </div>
+        <div class="pc-items">
+          <div class="pc-item">
+            <div class="pc-dot green"></div>
+            <div><div class="pc-item-title">Minimal startup footprint</div><div class="pc-item-desc">No storefront, no lease, no build-out costs. Cart + permits + inventory is all you need to launch.</div></div>
+          </div>
+          <div class="pc-item">
+            <div class="pc-dot green"></div>
+            <div><div class="pc-item-title">Subscription-driven demand forecasting</div><div class="pc-item-desc">Notification sign-ups tell operators exactly how much inventory to bring — dramatically reducing waste.</div></div>
+          </div>
+          <div class="pc-item">
+            <div class="pc-dot green"></div>
+            <div><div class="pc-item-title">Scarcity creates virality</div><div class="pc-item-desc">Limited days and locations generate organic social media buzz. Students share drops, creating free marketing loops.</div></div>
+          </div>
+          <div class="pc-item">
+            <div class="pc-dot green"></div>
+            <div><div class="pc-item-title">Authentic student brand equity</div><div class="pc-item-desc">Founded by students for students. This is not a franchise imposed on campus — it is born from it.</div></div>
+          </div>
+          <div class="pc-item">
+            <div class="pc-dot green"></div>
+            <div><div class="pc-item-title">Scalable model</div><div class="pc-item-desc">The same playbook can be replicated at any large university campus nationwide with low marginal cost.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="pc-col">
+        <div class="pc-col-header">
+          <div class="pc-badge red">Risks</div>
+          <div class="pc-col-title">What to Prepare For</div>
+        </div>
+        <div class="pc-items">
+          <div class="pc-item">
+            <div class="pc-dot red"></div>
+            <div><div class="pc-item-title">Weather dependency</div><div class="pc-item-desc">Champaign winters significantly limit outdoor activations. Revenue is highly seasonal — plan accordingly.</div></div>
+          </div>
+          <div class="pc-item">
+            <div class="pc-dot red"></div>
+            <div><div class="pc-item-title">Regulatory hurdles</div><div class="pc-item-desc">Mobile food vendor licensing, health inspections, and UIUC campus vendor approvals add lead time and cost before first sale.</div></div>
+          </div>
+          <div class="pc-item">
+            <div class="pc-dot red"></div>
+            <div><div class="pc-item-title">Annual student leadership turnover</div><div class="pc-item-desc">Operators graduate. Continuity planning and documented SOPs are essential to sustaining operations year over year.</div></div>
+          </div>
+          <div class="pc-item">
+            <div class="pc-dot red"></div>
+            <div><div class="pc-item-title">Equipment maintenance risk</div><div class="pc-item-desc">Freezer failures and cart breakdowns can cancel activations with no warning. Backup systems are strongly recommended.</div></div>
+          </div>
+          <div class="pc-item">
+            <div class="pc-dot red"></div>
+            <div><div class="pc-item-title">Competition from delivery apps</div><div class="pc-item-desc">DoorDash and large dessert chains compete for the same impulse spend. IlliniScoops' edge is presence, experience, and community — not price.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROADMAP -->
+<div class="roadmap-section" id="roadmap">
+  <div class="roadmap-inner">
+    <div class="section-tag">Launch Roadmap</div>
+    <h2 class="section-title">Six Phases to <span class="italic">First Scoop</span></h2>
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-num">1</div>
+        <div class="phase-content">
+          <div class="phase-tag">Weeks 1–2</div>
+          <div class="phase-title">Business Formation</div>
+          <div class="phase-items">
+            <div class="phase-item">Register LLC in Illinois</div>
+            <div class="phase-item">Obtain EIN from IRS</div>
+            <div class="phase-item">Open business banking account</div>
+          </div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">2</div>
+        <div class="phase-content">
+          <div class="phase-tag">Weeks 3–5</div>
+          <div class="phase-title">Licensing & Compliance</div>
+          <div class="phase-items">
+            <div class="phase-item">Mobile food vendor license</div>
+            <div class="phase-item">Champaign/Urbana city permits</div>
+            <div class="phase-item">IL Dept of Public Health certification</div>
+            <div class="phase-item">UIUC vendor program approval</div>
+          </div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">3</div>
+        <div class="phase-content">
+          <div class="phase-tag">Weeks 4–6</div>
+          <div class="phase-title">Equipment & Setup</div>
+          <div class="phase-items">
+            <div class="phase-item">Commercial ice cream cart/freezer ($4K–$10K)</div>
+            <div class="phase-item">Portable generator or battery cooling</div>
+            <div class="phase-item">POS payment system</div>
+            <div class="phase-item">Branded wrap & materials</div>
+          </div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">4</div>
+        <div class="phase-content">
+          <div class="phase-tag">Weeks 5–7</div>
+          <div class="phase-title">Supply Chain</div>
+          <div class="phase-items">
+            <div class="phase-item">Wholesale ice cream supplier agreements</div>
+            <div class="phase-item">Cold storage access & logistics</div>
+            <div class="phase-item">Backup inventory planning</div>
+          </div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">5</div>
+        <div class="phase-content">
+          <div class="phase-tag">Weeks 6–8</div>
+          <div class="phase-title">Subscription Infrastructure</div>
+          <div class="phase-items">
+            <div class="phase-item">Website + notification system</div>
+            <div class="phase-item">Email & SMS alert pipeline</div>
+            <div class="phase-item">Real-time cart status dashboard</div>
+          </div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">6</div>
+        <div class="phase-content">
+          <div class="phase-tag">Week 8+</div>
+          <div class="phase-title">Soft Launch & Data Collection</div>
+          <div class="phase-items">
+            <div class="phase-item">Quad & high-traffic pilot locations</div>
+            <div class="phase-item">Track peak demand hours & flavors</div>
+            <div class="phase-item">Measure weather impact on turnout</div>
+            <div class="phase-item">Iterate activation strategy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FINANCIALS -->
+<div class="financials-section" id="financials">
+  <div class="financials-inner">
+    <div class="section-tag">Financial Overview</div>
+    <h2 class="section-title">The <span class="accent">Numbers</span></h2>
+    <div class="fin-grid">
+      <div class="fin-card">
+        <div class="fin-card-title"><span class="icon">💰</span> Startup Cost Estimate</div>
+        <div class="cost-line"><span class="cost-label">Cart + commercial freezer</span><span class="cost-val">$6,000</span></div>
+        <div class="cost-line"><span class="cost-label">Branding & website</span><span class="cost-val">$1,500</span></div>
+        <div class="cost-line"><span class="cost-label">Licensing & permits</span><span class="cost-val">$1,000</span></div>
+        <div class="cost-line"><span class="cost-label">Initial inventory</span><span class="cost-val">$800</span></div>
+        <div class="cost-line"><span class="cost-label">POS payment system</span><span class="cost-val">$500</span></div>
+        <div class="cost-line"><span class="cost-label">Insurance (annual)</span><span class="cost-val">~$800</span></div>
+        <div class="cost-total"><span class="cost-label">Total Estimated Range</span><span class="cost-val">$9K – $12K</span></div>
+      </div>
+      <div class="fin-card highlight">
+        <div class="fin-card-title"><span class="icon">📈</span> Revenue Scenario</div>
+        <div class="revenue-scenario">
+          <div class="rs-label">Base Scenario — 3 Days / Week</div>
+          <div class="rs-row"><span class="rs-key">Operating days / week</span><span class="rs-val">3</span></div>
+          <div class="rs-row"><span class="rs-key">Avg. customers / day</span><span class="rs-val">150</span></div>
+          <div class="rs-row"><span class="rs-key">Average ticket size</span><span class="rs-val">$6.00</span></div>
+          <div class="rs-result">
+            <span class="rs-result-label">Est. Weekly Revenue</span>
+            <span class="rs-result-val">≈ $2,700</span>
+          </div>
+        </div>
+        <div class="revenue-scenario" style="background:rgba(77,184,194,0.07); border-color:rgba(77,184,194,0.2); margin-bottom:0;">
+          <div class="rs-label" style="color:#4DB8C2;">Upside — Events + Extended Hours</div>
+          <div class="rs-row"><span class="rs-key">Finals week activation</span><span class="rs-val">+$1,200/wk</span></div>
+          <div class="rs-row"><span class="rs-key">Campus event catering</span><span class="rs-val">+$500–$2,000/event</span></div>
+          <div class="rs-row"><span class="rs-key">Sponsorship revenue</span><span class="rs-val">TBD</span></div>
+          <div class="rs-result">
+            <span class="rs-result-label">Monthly potential (active semester)</span>
+            <span class="rs-result-val" style="color:#4DB8C2;">$10K+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PARTNERSHIPS -->
+<div class="partner-section" id="partners">
+  <div class="partner-inner">
+    <div class="section-tag">Collaboration</div>
+    <h2 class="section-title">Partnership <span class="italic">Opportunities</span></h2>
+    <p class="section-body" style="margin-top:0.5rem; margin-bottom:0;">We're actively seeking partners across four categories. Each offers unique co-branding and exposure benefits.</p>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <div class="pc-head">🧀</div>
+        <div class="pc-title">Suppliers & Brands</div>
+        <div class="pc-desc">Dairy providers, wholesale ice cream distributors, and food brands interested in reaching 45K+ students through authentic campus placement.</div>
+        <div class="pc-perks">
+          <div class="pc-perk">Exclusive flavor collaboration rights</div>
+          <div class="pc-perk">Cart branding & logo placement</div>
+          <div class="pc-perk">Website & subscription mention</div>
+        </div>
+      </div>
+      <div class="partner-card">
+        <div class="pc-head">🎓</div>
+        <div class="pc-title">Campus Organizations</div>
+        <div class="pc-desc">RSOs, Greek chapters, sports teams, and academic groups looking to co-host activation events or fund special scoop drops.</div>
+        <div class="pc-perks">
+          <div class="pc-perk">Co-branded activation events</div>
+          <div class="pc-perk">Revenue sharing on joint events</div>
+          <div class="pc-perk">Social media cross-promotion</div>
+        </div>
+      </div>
+      <div class="partner-card">
+        <div class="pc-head">🚀</div>
+        <div class="pc-title">Student Operators</div>
+        <div class="pc-desc">UIUC students interested in running or expanding the IlliniScoops model — either at UIUC or at their future university as a franchise-style operator.</div>
+        <div class="pc-perks">
+          <div class="pc-perk">Full operational playbook</div>
+          <div class="pc-perk">Brand licensing framework</div>
+          <div class="pc-perk">Mentorship from founding team</div>
+        </div>
+      </div>
+      <div class="partner-card">
+        <div class="pc-head">💼</div>
+        <div class="pc-title">Sponsors & Investors</div>
+        <div class="pc-desc">Individuals, funds, or local businesses interested in backing IlliniScoops in exchange for equity, sponsorship placement, or expansion rights.</div>
+        <div class="pc-perks">
+          <div class="pc-perk">Equity or revenue share structures</div>
+          <div class="pc-perk">Exclusive campus sponsorship</div>
+          <div class="pc-perk">Multi-campus expansion rights</div>
+        </div>
+      </div>
+      <div class="partner-card">
+        <div class="pc-head">🏪</div>
+        <div class="pc-title">Local Restaurants</div>
+        <div class="pc-desc">Champaign-Urbana food businesses looking to co-create limited edition flavors, cross-promote, or provide cold storage partnerships.</div>
+        <div class="pc-perks">
+          <div class="pc-perk">Limited edition flavor collabs</div>
+          <div class="pc-perk">Cross-promotion to student base</div>
+          <div class="pc-perk">Cold storage partnership</div>
+        </div>
+      </div>
+      <div class="partner-card">
+        <div class="pc-head">🔒</div>
+        <div class="pc-title">Legal & Insurance</div>
+        <div class="pc-desc">Partners are informed of all compliance requirements upfront. We maintain full liability coverage, food handling certification, and tax compliance.</div>
+        <div class="pc-perks">
+          <div class="pc-perk">General liability insurance on file</div>
+          <div class="pc-perk">IL food safety certification</div>
+          <div class="pc-perk">Sales tax collection compliance</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPANSION -->
+<section class="expansion-section">
+  <div class="exp-content">
+    <div class="section-tag" style="text-align:center; margin-bottom:1rem;">The Vision</div>
+    <h2 class="exp-title">Small cart.<br><span class="italic">Smart ops.</span><br><span class="accent">Big opportunity.</span></h2>
+    <p class="exp-body">IlliniScoops is not just a campus experiment — it's proof of concept for a repeatable micro-brand model that can operate at any major university in the country. The playbook is documented. The brand scales.</p>
+    <div class="exp-pillars">
+      <div class="exp-pillar">
+        <div class="ep-label">Phase 1</div>
+        <div class="ep-val">UIUC Launch</div>
+      </div>
+      <div class="exp-pillar">
+        <div class="ep-label">Phase 2</div>
+        <div class="ep-val">Multi-Cart UIUC</div>
+      </div>
+      <div class="exp-pillar">
+        <div class="ep-label">Phase 3</div>
+        <div class="ep-val">Seasonal Pop-ups</div>
+      </div>
+      <div class="exp-pillar">
+        <div class="ep-label">Phase 4</div>
+        <div class="ep-val">Other Campuses</div>
+      </div>
+    </div>
+    <button class="btn-primary" style="font-size:1rem; padding:1.1rem 2.8rem;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Let's Talk Expansion →</button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="section-tag" style="color:rgba(255,255,255,0.5);">Get in Touch</div>
+      <h2 class="section-title" style="margin-bottom:1rem;">Ready to Partner<br>with <span class="italic">IlliniScoops?</span></h2>
+      <p class="section-body">Whether you're a supplier, sponsor, investor, or aspiring operator — we'd love to explore what's possible together. Fill out the form and we'll respond within 48 hours.</p>
+      <div style="margin-top:2rem;">
+        <div class="closing-quote">
+          "Simple flavors. Limited appearances. Maximum excitement — and a business model serious partners will want to be a part of."
+        </div>
+      </div>
+    </div>
+    <div>
+      <form class="contact-form" onsubmit="handleContact(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input class="form-input" type="text" placeholder="Jane" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input class="form-input" type="text" placeholder="Smith" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" placeholder="jane@company.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Organization / Company</label>
+          <input class="form-input" type="text" placeholder="University of Illinois, Acme Co., etc." />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Partnership Type</label>
+          <select class="form-select">
+            <option value="">Select a category...</option>
+            <option>Supplier / Brand</option>
+            <option>Campus Organization</option>
+            <option>Student Operator</option>
+            <option>Investor / Sponsor</option>
+            <option>Local Restaurant</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell us about your interest..."></textarea>
+        </div>
+        <button class="form-submit" type="submit">Send Partnership Inquiry →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand"><span class="illini">Illini</span><span class="scoops">Scoops</span></div>
+  <div class="footer-meta">Partner Portal · University of Illinois Urbana-Champaign · © 2025</div>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Legal</a>
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to Top ↑</a>
+  </div>
+</footer>
+
+<script>
+  // Contact form handler
+  function handleContact(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = '✅ Inquiry Sent — We\'ll be in touch!';
+    btn.style.background = '#166534';
+    btn.disabled = true;
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.phase, .partner-card, .fin-card, .metric-box, .pc-item, .revenue-card, .hero-stat-card');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  reveals.forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = `opacity 0.55s ease ${(i % 8) * 0.07}s, transform 0.55s ease ${(i % 8) * 0.07}s`;
+    revealObs.observe(el);
+  });
+</script>
+</body>
+</html>
